@@ -1,121 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Do You Love Me?</title>
-  <style>
-    body {
-      background-color: #ffdce1;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    img {
-      width: 150px;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      color: #333;
-      font-size: 2rem;
-      margin-bottom: 30px;
-    }
-
-    .buttons {
-      display: flex;
-      gap: 20px;
-    }
-
-    button {
-      border: none;
-      outline: none;
-      padding: 10px 25px;
-      font-size: 18px;
-      border-radius: 30px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    #yesBtn {
-      background-color: #ff85a1;
-      color: white;
-      box-shadow: 0px 4px 15px rgba(255, 133, 161, 0.5);
-    }
-
-    #yesBtn:hover {
-      transform: scale(1.1);
-    }
-
-    #noBtn {
-      background-color: #fff;
-      color: #ff85a1;
-      border: 2px solid #ff85a1;
-      position: absolute;
-    }
-
-    #result {
-      display: none;
-      margin-top: 40px;
-      font-size: 1.5rem;
-      color: #ff5f8f;
-      animation: fadeIn 1s ease-in-out;
-    }
-
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hai, Mel ✨</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class="bg" aria-hidden="true"></div>
 
-  <!-- Gambar beruang -->
-  <img src="Gambar WhatsApp 2025-10-26 pukul 18.35.36_7df52064.jpg" alt="Cute Bear">
+  <main class="card-wrap" role="main" aria-label="Ucapan">
+    <div class="avatar">
+      <img src="avatar.png" alt="Avatar beruang">
+    </div>
 
-  <!-- Pertanyaan -->
-  <h1>Do you love me?</h1>
+    <div class="title">Hai, <strong>Mel</strong> <span class="sparkle">✨</span></div>
 
-  <!-- Tombol -->
-  <div class="buttons">
-    <button id="yesBtn">Yes</button>
-    <button id="noBtn">No</button>
-  </div>
+    <article class="message-card">
+      <div class="message-text" id="messageText">
+        <div class="line">Sekarang Aku Mau Bilang..</div>
+        <div class="line">Ikan Paus Makan Tahu</div>
+        <div class="line">Akuuu kangen kamuu &lt;&gt;</div>
+        <div class="line">i miss uuu ❤️❤️❤️❤️❤️❤️❤️</div>
+      </div>
 
-  <!-- Pesan hasil -->
-  <div id="result">Awww 🥰 I love you too 💕</div>
+      <div class="reply-btn">
+        <button id="replyBtn">Balas</button>
+      </div>
+    </article>
 
-  <!-- Musik -->
-  <audio id="bgMusic" autoplay loop>
+    <div class="hint">Tap "Balas" untuk membalas pesan ini</div>
+  </main>
+
+  <audio id="bgAudio" loop>
     <source src="Tak Ada Yang Abadi - Safira (Lyrics) - Popcorn Music.mp3" type="audio/mpeg">
   </audio>
 
-  <script>
-    const yesBtn = document.getElementById('yesBtn');
-    const noBtn = document.getElementById('noBtn');
-    const result = document.getElementById('result');
-    const music = document.getElementById('bgMusic');
-
-    // Musik mulai otomatis
-    music.volume = 0.5;
-
-    // Fungsi agar tombol "No" lari
-    noBtn.addEventListener("mouseover", () => {
-      const newX = Math.floor(Math.random() * (window.innerWidth - noBtn.offsetWidth));
-      const newY = Math.floor(Math.random() * (window.innerHeight - noBtn.offsetHeight));
-      noBtn.style.left = `${newX}px`;
-      noBtn.style.top = `${newY}px`;
-    });
-
-    // Ketika klik "Yes"
-    yesBtn.addEventListener("click", () => {
-      result.style.display = "block";
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
